@@ -13,9 +13,8 @@ jobs:
 
       - name: Get grpc version
         run: |
-          echo "GRPC_VERSION=$(docker run -it -v "$(pwd)/tests/test.py":/test.py python-grpcio python test.py)" >> $GITHUB_ENV
-          echo "GRPC_LINE=$(cat requirements.txt | grep grpcio)" >> $GITHUB_ENV
-          echo "EXPECTED_VERSION=${GRPC_LINE#*==}" >> $GITHUB_ENV
+          echo "GRPC_VERSION=$(docker run -v "$(pwd)/tests/test.py":/test.py python-grpcio python test.py)" >> $GITHUB_ENV
+          echo "EXPECTED_VERSION=$(cat requirements.txt | grep grpcio | grep -oP '.*\b\K\d+\.\d+\.\d+\b')" >> $GITHUB_ENV
 
       - name: Check grpc version
         run: |
