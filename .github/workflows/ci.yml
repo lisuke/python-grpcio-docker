@@ -23,7 +23,7 @@ jobs:
           echo "expected version: ${EXPECTED_VERSION}"
 
       - name: Assert version
-        if: ${{ GRPC_VERSION != EXPECTED_VERSION }}
+        if: env.GRPC_VERSION != env.EXPECTED_VERSION
         uses: actions/github-script@v3
         with:
           script: |
