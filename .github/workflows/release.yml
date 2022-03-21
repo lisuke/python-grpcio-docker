@@ -38,9 +38,9 @@ jobs:
             const tags = [
               `${image_name}:latest`,
               `${image_name}:${major}`,
-              `${image_name}:${major}:${minor}`,
-              `${image_name}:${major}:${minor}:${patch}`,
-              `${image_name}:${major}:${minor}:${patch}-${sequence}`
+              `${image_name}:${major}.${minor}`,
+              `${image_name}:${major}.${minor}.${patch}`,
+              `${image_name}:${major}.${minor}.${patch}-${sequence}`
             ]
             core.exportVariable('IMAGE_TAGS', tags.join(','))
 
