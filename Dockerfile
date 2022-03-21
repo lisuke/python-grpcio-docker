@@ -1,8 +1,11 @@
 FROM python:3.10.3-alpine3.15
 
+WORKDIR /app
+
 COPY requirements.txt ./
 
 RUN apk add --no-cache g++ musl-dev libffi-dev libstdc++ && \
-    pip install --no-cache-dir -r requirements.txt && \
+    python -m venv venv && \
+    venv/bin/pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt && \
     apk del g++ musl-dev libffi-dev
