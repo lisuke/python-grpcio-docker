@@ -9,3 +9,5 @@ RUN apk add --no-cache g++ musl-dev libffi-dev libstdc++ && \
     venv/bin/pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt && \
     apk del g++ musl-dev libffi-dev
+
+# python is located in venv/bin
