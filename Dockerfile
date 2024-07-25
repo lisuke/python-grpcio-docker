@@ -9,7 +9,7 @@ COPY requirements.txt ./
 
 RUN apk add --no-cache g++ musl-dev libffi-dev libstdc++ 
 RUN python -m pip install --upgrade pip
-RUN python -m pip install -r requirements.txt
+RUN python -m pip install --use-deprecated=legacy-resolver -r requirements.txt
 RUN apk del g++ musl-dev libffi-dev
 
 # python is located in venv/bin
