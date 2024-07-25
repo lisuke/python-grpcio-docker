@@ -45,4 +45,4 @@ grpcio==1.65.1 \
     --hash=sha256:f40cebe5edb518d78b8131e87cb83b3ee688984de38a232024b9b44e74ee53d3 \
     --hash=sha256:f62652ddcadc75d0e7aa629e96bb61658f85a993e748333715b4ab667192e4e8 \
     --hash=sha256:ff5a84907e51924973aa05ed8759210d8cdae7ffcf9e44fd17646cf4a902df59
-grpcio-tools
+grpcio-tools==1.65.1
